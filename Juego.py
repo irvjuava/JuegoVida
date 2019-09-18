@@ -15,8 +15,7 @@ class Juego:
     def get_gens( self ):
         return self.__tablero.get_gens()
 
-    # Esta función tiene como parámetros las coordenadas de una célula y
-    # regresará un booleano representando si vive o muere para la siguiente gen
+    #Itera sobre el tablero y evalua regresando un booleano 
     def reglas( self, row, col ):
         vecinos = self.__tablero.get_alive_neighbors( row, col )
         if( self.__tablero.is_alive_cell( row, col )):
@@ -30,8 +29,7 @@ class Juego:
             else:
                 return False
 
-    # Esta función itera en cada una de las celdas del tablero, evalúa si viven
-    # o mueren y regresa el arreglo listo para ingresar en "configure"
+    #Itera y evalúa para regresar el arreglo
     def checarReglas( self ):
         nuevaConfig = []
         for i in range( self.__tablero.get_num_rows() ):
